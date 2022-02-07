@@ -1,7 +1,28 @@
 const audio = document.querySelector("audio");
+const picture = document.querySelector(".picture");
 const playPause = document.querySelector(".play-pause");
+const next = document.querySelector(".forward");
+const previous = document.querySelector(".backward");
+const artist = document.querySelector(".song-artist");
+const song = document.querySelector(".song-title");
+
 let playNum = 0;
 let isPlay = false;
+let playlist = [
+  "billie-eilish-no-time-to-die(mp3bit.cc).mp3",
+  "beyonce.mp3",
+  "dontstartnow.mp3",
+];
+
+let pictures = ["Billy Eilish.jpg", "lemonade.png", "dontstartnow.png"];
+let artists = ["Billy Eilish", "Beyonce", "Dua Lipa"];
+let songs = ["No Time To Die", "Don't Hurt Yourself", "Don't Start Now"];
+let treck; //переменная с индексом трека
+
+//событие перед загрузкой страницы
+window.onload = function () {
+  treck = 0;
+};
 
 playPause.addEventListener("click", playPauseAudio);
 
@@ -65,3 +86,37 @@ timeline.addEventListener(
   },
   false
 );
+
+//Переключение песен
+function switchTreck(numTreck) {
+  //Меняем значение атрибута src
+  audio.src = "./assets/music/" + playlist[numTreck];
+  picture.src = "./assets/img/" + pictures[numTreck];
+  artist.textContent = artists[numTreck];
+  song.textContent = songs[numTreck];
+  //назначаем время песни ноль
+  audio.currentTime = 0;
+  audio.play();
+  isPlay = true;
+  playPause.classList.add("pause");
+}
+
+previous.addEventListener("click", function () {
+  if (treck > 0) {
+    treck--;
+    switchTreck(treck); //меняем песню
+  } else {
+    treck = 2;
+    switchTreck(treck);
+  }
+});
+
+next.addEventListener("click", function () {
+  if (treck < 2) {
+    treck++;
+    switchTreck(treck);
+  } else {
+    treck = 0;
+    switchTreck(treck); //меняем песню
+  }
+});
