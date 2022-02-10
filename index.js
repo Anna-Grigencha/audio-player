@@ -14,7 +14,7 @@ let playlist = [
   "dontstartnow.mp3",
 ];
 
-let pictures = ["Billy Eilish.jpg", "lemonade.png", "dontstartnow.png"];
+let pictures = ["Billie_Eilish.png", "lemonade.png", "dontstartnow.png"];
 let artists = ["Billy Eilish", "Beyonce", "Dua Lipa"];
 let songs = ["No Time To Die", "Don't Hurt Yourself", "Don't Start Now"];
 let treck; //переменная с индексом трека
@@ -28,7 +28,6 @@ playPause.addEventListener("click", playPauseAudio);
 
 function playPauseAudio() {
   if (isPlay === false) {
-    audio.currentTime = 0;
     audio.play();
     isPlay = true;
     playPause.classList.add("pause");

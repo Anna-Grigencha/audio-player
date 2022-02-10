@@ -138,8 +138,8 @@
   justify-content: space-between; /*элементы располагаются по ширине, на одном расстоянии друг от друга*/
   align-items: baseline; /*элементы на одном уровне*/
   align-self: flex-end;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .length {
