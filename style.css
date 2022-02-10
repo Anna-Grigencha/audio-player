@@ -137,9 +137,23 @@
   flex-wrap: wrap;
   justify-content: space-between; /*элементы располагаются по ширине, на одном расстоянии друг от друга*/
   align-items: baseline; /*элементы на одном уровне*/
-  align-self: flex-end;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.github-link {
+  width: 33%;
+  text-align: left;
+}
+
+.rs-school-link {
+  width: 33%;
+  text-align: right;
+}
+
+.year-footer {
+  width: 33%;
+  text-align: center;
 }
 
 .length {
